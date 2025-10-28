@@ -10,3 +10,4 @@ option.oldFoliageGreen = Old Vibrant Green Foliage
 option.foliageGreenAmount = Foliage Green Strength
 option.noWaterTransparency = No Water Transparency
 option.waterBlueness = Water Blueness
+option.fogSkyOverlap = Fog Sky Overlap
