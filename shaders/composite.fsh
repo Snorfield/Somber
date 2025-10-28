@@ -22,14 +22,14 @@ void main() {
     #ifdef fogToggle
         float depth = texture(depthtex0, texcoord).r;
 
-        #ifdef fogSkyOverlap
+        #ifndef fogSkyOverlap
             if (depth < 1.0) {
                 vec3 caveFactor = skyColor - smoothstep(80.0, 0.0, eyeAltitude);
                 outputColor.rgb = mix(outputColor.rgb, caveFactor, smoothstep(fogStrenth, 1.0, depth));
             }
         #endif
 
-        #ifndef fogSkyOverlap
+        #ifdef fogSkyOverlap
                 vec3 caveFactor = skyColor - smoothstep(80.0, 0.0, eyeAltitude);
                 outputColor.rgb = mix(outputColor.rgb, caveFactor, smoothstep(fogStrenth, 1.0, depth));
         #endif
