@@ -14,6 +14,7 @@ uniform float viewHeight;
 uniform float viewWidth;
 uniform int frameCounter;
 
+/* RENDERTARGETS: 0 */
 layout(location = 0) out vec4 color;
 
 void main() {    
