@@ -1,7 +1,7 @@
 #version 330 compatibility
 
 #define chromaticAbberation
-#define abberationAmount 0.8 // [0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
+#define abberationAmount 0.5 // [0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0]
 #define noiseToggle
 #define noiseSize 800.0 // [300.0 400.0 500.0 600.0 700.0 800.0 900.0]
 #define vignette
