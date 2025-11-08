@@ -1,7 +1,7 @@
 #version 330 compatibility
 
 #define fogToggle
-#define fogStrenth 0.993 // [0.99 0.992 0.993 0.994 0.995 0.996 0.997 0.998 0.999 0.9999 0.99999]
+#define fogStrenth 0.993 // [0.95 0.96 0.97 0.98 0.99 0.992 0.993 0.994 0.995 0.996 0.997 0.998 0.999 0.9999 0.99999]
 #define fogSkyOverlap
 
 uniform sampler2D colortex0;
