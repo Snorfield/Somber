@@ -1,5 +1,7 @@
 #version 330 compatibility
 
+#define starBrightness 1.5 // [1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
 uniform int renderStage;
 uniform float viewHeight;
 uniform float viewWidth;
@@ -31,8 +33,10 @@ layout(location = 0) out vec4 color;
 void main() {
 	if (renderStage == MC_RENDER_STAGE_STARS) {
 		color = glcolor;
+		color *= starBrightness;
 	} else {
 		vec3 pos = screenToView(vec3(gl_FragCoord.xy / vec2(viewWidth, viewHeight), 1.0));
 		color = vec4(calcSkyColor(normalize(pos)), 1.0);
 	}
 }
+
