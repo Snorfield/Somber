@@ -18,10 +18,13 @@ Most effects can be toggled and customized in the settings menu for the shader i
 - Noise Strength
 - Fog
 - Fog Strength
+- Fog Sky Overlay
 - Water Transparency
 - Water Vibrance Strength
 - Old Foliage Vibrance
 - Foliage Vibrance Strength
+- Star Brightness
+- Sun and Moon Brightness
 
 The shader also accentuates shadows similarly to old versions, adds dynamic fog which darkens with depth, and removes transparency from the top water layers so you can't see what's below.
 
