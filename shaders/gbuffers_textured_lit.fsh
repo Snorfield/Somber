@@ -14,7 +14,7 @@ layout(location = 0) out vec4 color;
 
 void main() {
 	color = texture(gtexture, texcoord) * glcolor;
-	color *= texture(lightmap, lmcoord);
+	color *= pow(texture(lightmap, lmcoord), vec4(4.0));
 	if (color.a < alphaTestRef) {
 		discard;
 	}
