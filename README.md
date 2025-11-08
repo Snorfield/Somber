@@ -1,6 +1,8 @@
 ![Dark foggy forest](shot2.png)
 # Somber
 
+https://modrinth.com/shader/somber
+
 Somber is a light weight Iris minecraft shaderpack that aims to bring back the nostalgic atmosphere of earlier versions of minecraft with added eerie effects.
 
 **It is recommended to use the built-in *Programmer Art* texture pack to bring back old textures.**
