@@ -6,6 +6,7 @@
 
 uniform sampler2D colortex0;
 uniform sampler2D depthtex0;
+uniform sampler2D depthtex1;
 uniform vec3 skyColor;
 uniform float fogEnd;
 uniform float fogStart;
@@ -21,7 +22,10 @@ void main() {
     vec4 outputColor = texture(colortex0, texcoord);
 
     #ifdef fogToggle
-        float depth = texture(depthtex0, texcoord).r;
+        float depth1 = texture(depthtex1, texcoord).r;
+        float depth0 = texture(depthtex0, texcoord).r;
+
+        float depth = (depth1 > 0.999999971) ? depth0 : depth1;
 
         #ifndef fogSkyOverlap
             if (depth < 1.0) {
