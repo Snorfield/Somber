@@ -1,10 +1,11 @@
 #version 330 compatibility
 
-uniform sampler2D lightmap;
-uniform sampler2D gtexture;
-
+#include "shadow_strength.glsl"
 #define oldFoliageGreen
 #define foliageGreenAmount 1.6 // [1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0]
+
+uniform sampler2D lightmap;
+uniform sampler2D gtexture;
 
 uniform float alphaTestRef = 0.1;
 
@@ -27,7 +28,7 @@ void main() {
 	#endif
 
 	color = texture(gtexture, texcoord) * foliage;
-	color *= pow(texture(lightmap, lmcoord), vec4(4.0));
+	color *= pow(texture(lightmap, lmcoord), vec4(shadowStrength));
 	if (color.a < alphaTestRef) {
 		discard;
 	}
