@@ -13,3 +13,4 @@ option.waterBlueness = Water Blueness
 option.fogSkyOverlap = Fog Sky Overlap
 option.starBrightness = Star Brightness
 option.sunMoonBrightness = Sun and Moon Brightness
+option.shadowStrength = Shadow Strength
