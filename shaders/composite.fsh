@@ -3,8 +3,10 @@
 #define fogToggle
 #define fogStrenth 0.993 // [0.95 0.96 0.97 0.98 0.99 0.992 0.993 0.994 0.995 0.996 0.997 0.998 0.999 0.9999 0.99999]
 #define fogSkyOverlap
+#define noWaterTransparency
 
 uniform sampler2D colortex0;
+uniform sampler2D colortex1;
 uniform sampler2D depthtex0;
 uniform sampler2D depthtex1;
 uniform vec3 skyColor;
@@ -21,11 +23,19 @@ void main() {
 
     vec4 outputColor = texture(colortex0, texcoord);
 
+    vec4 mask = texture(colortex1, texcoord);
+
     #ifdef fogToggle
         float depth1 = texture(depthtex1, texcoord).r;
         float depth0 = texture(depthtex0, texcoord).r;
 
-        float depth = (depth1 > 0.999999971) ? depth0 : depth1;
+        #ifndef noWaterTransparency
+            float depth = depth1;
+        #endif
+
+        #ifdef noWaterTransparency
+            float depth = (mask.r > 0.0) ? depth1 : depth0;
+        #endif
 
         #ifndef fogSkyOverlap
             if (depth < 1.0) {
